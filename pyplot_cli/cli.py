@@ -17,12 +17,12 @@ def str_to_list(string: str, dtype: type) -> list:
 def main(
     filename: str,
     x_idx: int = typer.Option(..., "-x"),
-    y_idx_list: str = typer.Option(
-        ..., "-y", help="Comma-separated column indices like '1,2'"),
-    colors: str = typer.Option("", help="Comma-separated colors like 'k,r'"),
-    styles: str = typer.Option("-", help="Comma-separated colors like '-,o-'"),
-    xlabel: str = typer.Option(
-        "", help="xlabel. Default is column name of selected x."),
+    y_idx: str = typer.Option(...,
+                              "-y",
+                              help="Comma-separated column indices ex)'1,2'"),
+    colors: str = typer.Option("", help="Comma-separated colors ex)'k,r'"),
+    styles: str = typer.Option("-", help="Comma-separated colors ex)'-,o-'"),
+    xlabel: str = typer.Option("", help="xlabel. Default is column name."),
     ylabel: str = typer.Option("", help="ylabel. default is 'data'"),
     show_grid: bool = typer.Option(False, "--grid", help="Show grids or not"),
     show_minorticks: bool = typer.Option(False,
@@ -42,12 +42,12 @@ def main(
         help="Filename to save figure. If not given, does not save."),
 ):
     """Simple cli app to plot figure from data file with matplotlib."""
-    y_idx_list = str_to_list(y_idx_list, int)
-    colors = str_to_list(colors, str)
-    styles = str_to_list(styles, str)
+    y_idx_list = str_to_list(y_idx, int)
+    colors_list = str_to_list(colors, str)
+    styles_list = str_to_list(styles, str)
 
-    if len(styles) == 1:
-        styles = styles * len(y_idx_list)
+    if len(styles_list) == 1:
+        styles_list = styles_list * len(y_idx_list)
 
     dataset = DataSet(filename)
 
@@ -61,12 +61,12 @@ def main(
     plt.figure()
 
     # plot
-    if colors == []:
-        for style, label, y_values in zip(styles, selected_column_names,
+    if colors_list == []:
+        for style, label, y_values in zip(styles_list, selected_column_names,
                                           y_values_list):
             plt.plot(x_values, y_values, style, label=label)
     else:
-        for style, color, label, y_values in zip(styles, colors,
+        for style, color, label, y_values in zip(styles_list, colors_list,
                                                  selected_column_names,
                                                  y_values_list):
             plt.plot(x_values, y_values, style, c=color, label=label)

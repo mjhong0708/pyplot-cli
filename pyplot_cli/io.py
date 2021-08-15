@@ -20,12 +20,12 @@ class DataSet:
         self.values = self.dataframe.values.T
 
     def load_excel(self):
-        return self.load_excel(self.filename)
+        return pd.read_excel(self.filename)
 
     def load_txt(self):
         if self.extension == "csv":
             sep = ","
-        elif self.extension == "dat" or self.extension == "txt":
+        else:
             sep = r"\s+"
 
         data = pd.read_csv(self.filename, sep=sep)
