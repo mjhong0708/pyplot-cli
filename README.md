@@ -8,6 +8,11 @@ Lightweight cli tool for plotting data. Currently, only line plot is supported.
 
 - `0.1.0` (2021.08.15): Initialized!
 
+## Installation
+
+- `pip install pyplot_cli` for installation from pypi
+- download wheel from releases and install manually by pip
+
 ## Usage
 
 - Basic: `pyplt [filename] -x [x_index] -y [y_indices]`
