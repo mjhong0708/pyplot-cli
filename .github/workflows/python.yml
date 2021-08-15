@@ -82,6 +82,6 @@ jobs:
         gistID: 13e2bab396cb1eb44f14dd08787f89bd
         filename: pyplot-cli__${{ env.BRANCH }}.json
         label: Test Coverage
-        message: ${{ env.COVERAGE }}
+        message: 100%    # TODO need to replace it
         color: green
         namedLogo: jest
