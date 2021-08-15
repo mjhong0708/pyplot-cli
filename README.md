@@ -7,6 +7,7 @@ Lightweight cli tool for plotting data. Currently, only line plot is supported.
 ## Release note
 
 - `0.1.0` (2021.08.15): Initialized!
+- `0.1.1` (2021.08.15): Fixed type checking issues
 
 ## Installation
 
