@@ -45,6 +45,7 @@ jobs:
     - if: ${{ matrix.python-version == '3.8' }}
       name: Get Coverage for badge
       run: |
+        export PYTHONPATH="$PYTHONPATH:$(pwd)"
         # var SUMMARY = [
         #   '',
         #   '=============================== Coverage summary ===============================',
