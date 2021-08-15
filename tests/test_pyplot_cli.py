@@ -1,4 +1,4 @@
-from pyplt import __version__
+from pyplot_cli import __version__
 
 
 def test_version():
