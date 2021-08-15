@@ -1,6 +1,6 @@
 # pyplot-cli
 
-<!-- ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/mjhong0708/13e2bab396cb1eb44f14dd08787f89bd/raw/pyplot-cli__heads_master.json) -->
+![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/mjhong0708/13e2bab396cb1eb44f14dd08787f89bd/raw/pyplot-cli__heads_master.json)
 
 Lightweight cli tool for plotting data. Currently, only line plot is supported.
 
